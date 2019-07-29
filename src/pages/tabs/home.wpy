@@ -1,0 +1,32 @@
+<template>
+  <view>我是主页</view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+
+  export default class Home extends wepy.page {
+      config = {
+          navigationBarTitleText: 'myugo'
+    }
+    components = {
+        }
+
+    data = {
+        }
+
+    computed = {
+        }
+
+    methods = {
+        }
+
+
+    onLoad() {
+    }
+  }
+</script>
+
+<style lang="less">
+
+</style>
