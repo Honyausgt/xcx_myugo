@@ -6,20 +6,20 @@
   import wepy from 'wepy'
 
   export default class Home extends wepy.page {
-      config = {
-          navigationBarTitleText: 'myugo'
+    config = {
+      navigationBarTitleText: 'myugo'
     }
     components = {
-        }
+    }
 
     data = {
-        }
+    }
 
     computed = {
-        }
+    }
 
     methods = {
-        }
+    }
 
 
     onLoad() {
@@ -28,5 +28,4 @@
 </script>
 
 <style lang="less">
-
 </style>

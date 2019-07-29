@@ -2,35 +2,55 @@
   import wepy from 'wepy'
   import 'wepy-async-function'
 
-
   export default class extends wepy.app {
     config = {
       pages: [
-        'pages/tabs/cart',
         'pages/tabs/home',
+        'pages/tabs/cart',
         'pages/tabs/search',
         'pages/tabs/cate',
         'pages/tabs/me'
       ],
       window: {
-        backgroundTextStyle: 'light',
-        navigationBarBackgroundColor: '#fff',
-        navigationBarTitleText: 'WeChat',
-        navigationBarTextStyle: 'black'
+        backgroundTextStyle: 'dark',
+        navigationBarBackgroundColor: '#D81E06',
+        navigationBarTitleText: '无信号',
+        backgroundColor: '#eeeeee',
+        navigationBarTextStyle: 'black',
+        enablePullDownRefresh: true
       },
       tabBar: {
+        selectedColor: '#D81E06',
         list: [
           {
+            pagePath: 'pages/tabs/home',
+            text: '首页',
+            iconPath: 'imgs/icons/home.png',
+            selectedIconPath: 'imgs/icons/home-active.png'
+          },
+          {
             pagePath: 'pages/tabs/cate',
-            text: '分类页',
-            iconPath: '/',
-            selectedIconPath: ''
+            text: '分类',
+            iconPath: 'imgs/icons/cates.png',
+            selectedIconPath: 'imgs/icons/cates-active.png'
+          },
+          {
+            pagePath: 'pages/tabs/search',
+            text: '搜索',
+            iconPath: 'imgs/icons/search.png',
+            selectedIconPath: 'imgs/icons/search-active.png'
           },
           {
             pagePath: 'pages/tabs/cart',
-            text: '首页',
-            iconPath: '/',
-            selectedIconPath: ''
+            text: '购物车',
+            iconPath: 'imgs/icons/cart.png',
+            selectedIconPath: 'imgs/icons/cart-active.png'
+          },
+          {
+            pagePath: 'pages/tabs/me',
+            text: '我的',
+            iconPath: 'imgs/icons/my.png',
+            selectedIconPath: 'imgs/icons/my-active.png'
           }
         ]
       }
@@ -61,7 +81,6 @@
       const data = await this.sleep(3)
       console.log(data)
     }
-
   }
 </script>
 

@@ -6,20 +6,20 @@
   import wepy from 'wepy'
 
   export default class User extends wepy.page {
-      config = {
-          navigationBarTitleText: 'myugo'
+    config = {
+      navigationBarTitleText: 'myugo'
     }
     components = {
-        }
+    }
 
     data = {
-        }
+    }
 
     computed = {
-        }
+    }
 
     methods = {
-        }
+    }
 
 
     onLoad() {

@@ -1,7 +1,7 @@
 <style lang="less">
 </style>
 <template>
-  <view>我是首页</view>
+  <view>我是购物车页</view>
 </template>
 
 <script>
