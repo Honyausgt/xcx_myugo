@@ -1,31 +1,95 @@
 <template>
-  <view>我是主页</view>
+  <view>
+    <!-- 轮播图区域 -->
+    <swiper indicator-dots="{{indicatorDots}}"
+            autoplay="{{autoplay}}"
+            interval="{{interval}}">
+      <block wx:for="{{focusLists}}"
+             wx:key="index">
+        <swiper-item>
+          <!-- 声明式导航给图片添加跳转连接 -->
+          <navigator url="{{item.navigator_url}}"
+                     open-type="{{item.open_type}}">
+            <image src="{{item.image_src}}"
+                   class="slide-image"
+                   width="355"
+                   height="150">
+          </navigator>
+
+        </swiper-item>
+      </block>
+    </swiper>
+
+    <!-- 楼层区域 -->
+    <view class="floor-container">
+      <view class="floor-item"
+            wx:for="{{floorData}}"
+            wx:key="index">
+        <!-- 楼层的标题 -->
+        <image class="floor-item-title"
+               src="{{item.floor_title.image_src}}" />
+        <!-- 楼层的图片 -->
+        <view class="floor-img-box">
+          <image class="floor-item-pic"
+                 wx:for="{{item.product_list}}"
+                 wx:key="index"
+                 src="{{item.image_src}}"
+                 style="width: {{item.image_width}}rpx;"
+                 @tap="goGoodsList({{item.navigator_url}})" />
+        </view>
+      </view>
+    </view>
+
+  </view>
 </template>
 
 <script>
   import wepy from 'wepy'
+  import mix from '@/mixins/tabs/home'
 
-  export default class Home extends wepy.page {
-    config = {
-      navigationBarTitleText: 'myugo'
-    }
-    components = {
-    }
-
-    data = {
-    }
-
-    computed = {
-    }
-
-    methods = {
-    }
-
-
-    onLoad() {
-    }
+  export default class extends wepy.page {
+    mixins = [mix]
   }
 </script>
 
 <style lang="less">
+  swiper {
+    height: 350rpx;
+    navigator,
+    image {
+      height: 100% !important;
+      width: 750rpx !important;
+    }
+  }
+
+  .cates {
+    display: flex;
+    justify-content: space-around;
+    margin: 40rpx 0;
+    image {
+      width: 128rpx;
+      height: 140rpx;
+    }
+  }
+
+  .floor-container {
+    .floor-item {
+      .floor-item-title {
+        height: 50rpx;
+        width: 640rpx;
+        display: block;
+      }
+      .floor-img-box {
+        .floor-item-pic {
+          float: left;
+          height: 190rpx;
+          margin: 8rpx;
+          margin-top: 0;
+          &:nth-child(1) {
+            height: 390rpx;
+          }
+        }
+      }
+    }
+  }
 </style>

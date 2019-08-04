@@ -9,13 +9,17 @@
         'pages/tabs/cart',
         'pages/tabs/search',
         'pages/tabs/cate',
-        'pages/tabs/me'
+        'pages/tabs/me',
+        // 商品详情
+        'pages/goods_detail/main',
+        // 商品列表
+        'pages/goods_list'
       ],
       window: {
         backgroundTextStyle: 'dark',
         navigationBarBackgroundColor: '#D81E06',
-        navigationBarTitleText: '无信号',
-        backgroundColor: '#eeeeee',
+        navigationBarTitleText: 'ugo',
+        backgroundColor: '#eee',
         navigationBarTextStyle: 'black',
         enablePullDownRefresh: true
       },
@@ -53,6 +57,26 @@
             selectedIconPath: 'imgs/icons/my-active.png'
           }
         ]
+      },
+      // 引用注册全局组件
+      usingComponents: {
+        // 徽章组件
+        'van-badge': './assets/vant/badge/index',
+        'van-badge-group': './assets/vant/badge-group/index',
+        // 布局相关的组件
+        'van-row': './assets/vant/row/index',
+        'van-col': './assets/vant/col/index',
+        // 搜索框组件
+        'van-search': './assets/vant/search/index',
+        // 单元格组件
+        'van-cell': './assets/vant/cell/index',
+        'van-cell-group': './assets/vant/cell-group/index',
+        // 图标
+        'van-icon': './assets/vant/icon/index',
+        // Tag 标签
+        'van-tag': './assets/vant/tag/index',
+        // 商品卡片组件
+        'van-card': './assets/vant/card/index'
       }
     }
 
@@ -63,6 +87,10 @@
     constructor() {
       super()
       this.use('requestfix')
+      // 开启promise
+      this.use('promisify')
+      // 设置请求拦截器，用于实现loading效果
+      // this.inter
     }
 
     onLaunch() {
